@@ -1,0 +1,27 @@
+# function to check if a strin is a pangram
+# can be checked with ispangram("The quick brown fox jumps over the lazy dog") ---> True
+
+import string
+letters=[]
+def ispangram(str1, alphabet=string.ascii_lowercase):
+    #change the sting into lowercase and into a list of characters
+    text=list(str1.lower()) 
+    # for every item in the list check if it's a space. if not create a new list of letters 
+    for n in range(0,len(text)):
+        if text[n] == ' ':
+            pass
+        else:
+            letters.append(text[n])
+    # print a list of all letters
+    print(f'all letters:{letters}')
+    # cast them into a set to remove duplicates
+    az=set(letters)
+    #cast the set back into a list and sort it alphabetically
+    azlist=list(az)
+    azlist.sort()
+    #join the list of characters into a string and compare it to an alphabet string, 
+    #return True is they are the same
+    azfinal=''.join(azlist)
+    print(azfinal)
+    return azfinal == alphabet
+    
